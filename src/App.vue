@@ -1,13 +1,16 @@
 <template>
-  <div>
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
+  <div class="container">
+    <listMemes />
   </div>
 </template>
 
 <script>
+import ListMemes from "./components/ListMemes";
 export default {
   name: "App",
+  components: {
+    ListMemes,
+  },
 };
 </script>
 
