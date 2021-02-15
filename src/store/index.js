@@ -6,13 +6,17 @@ export default createStore({
     memes: []
   },
   mutations: {
+    setMemes(state, payLoad) {
+      state.memes = payLoad;
+    }
   },
   actions: {
-    async getMemes(commit){
+    async getMemes({commit}){
       try {
         const response = await fetch("https://api.imgflip.com/get_memes");
         const result = await response.json();
-        console.log(result);
+        console.log(result.data)
+        commit("setMemes", result.data.memes);
       } catch (error) {
         console.log(error)
       }
