@@ -33,7 +33,9 @@ export default {
     });
 
     const changeTotalShow = (ev) => {
-      console.log(ev.target.value);
+      store.dispatch("getMemes", {
+        total: ev.target.value,
+      });
     };
 
     return {
